@@ -5,7 +5,7 @@ import requests
 from urllib.error import URLError
 streamlit.header('Fruityvice Fruit advice')
 try:
-    fruit_choice=streamlit.text_input('what fruit would you like information about?, 'kiwi')
+    fruit_choice=streamlit.text_input('what fruit would you like information about?')
     if not fruit_choice:
         streamlit.error("Please select a fruit to get information, ")
     else
