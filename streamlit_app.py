@@ -1,3 +1,5 @@
+streamlit.stop()
+
 import streamlit
 streamlit.title('My Parents New Healthy Diner')
 streamlit.header('Breakfast Menu')
@@ -15,8 +17,7 @@ import snowflake.connector
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT * from fruit_load_list")
-my_data_row = my_cur.fetchone()
+my_data_row = my_cur.fetchall()
 streamlit.text("The fruit load list contatins:")
-streamlit.text(my_data_row)
-streamlit.write(Thanks for adding 'add_my_fruit)
-my_cur.execute("INSERT INTO fruit_load_list VALUES('from stramlit')")
+streamlit.header("The fruit list contatins: ")
+streamlit.dataframe(my_data_rows)
